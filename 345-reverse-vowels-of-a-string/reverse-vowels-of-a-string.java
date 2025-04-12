@@ -11,10 +11,10 @@ class Solution {
         int p = 0;     // pointer at the start of String s
         int q = n - 1; // pointer at the end of String s
         while (p < q) { // TC: O(N / 2)
-            while (p < n && !isVowel(chars[p])) {
+            while (p < q && !isVowel(chars[p])) {
                 p++;
             }
-            while (q >= 0 && !isVowel(chars[q])) {
+            while (p < q && !isVowel(chars[q])) {
                 q--;
             }
             // at this point p and q pointer has a vowel so swap them
