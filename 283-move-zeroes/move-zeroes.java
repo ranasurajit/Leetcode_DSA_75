@@ -1,5 +1,7 @@
 class Solution {
     /**
+     * Approach I : Two Pass Approach
+     *
      * TC: O(2 x N) ~ O(N)
      * SC: O(N)
      */
