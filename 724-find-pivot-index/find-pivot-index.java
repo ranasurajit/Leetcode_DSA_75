@@ -13,19 +13,15 @@ class Solution {
         for (int i = n - 2; i >= 0; i--) { // TC: O(N)
             rightSum[i] = nums[i] + rightSum[i + 1];
         }
-        System.out.println(Arrays.toString(rightSum));
-        int pivotIdx = -1;
         int leftSum = 0;
         for (int i = 0; i < n; i++) { // TC: O(N)
             if (i < n - 1 && leftSum == rightSum[i + 1]) {
-                pivotIdx = i;
-                break;
+                return i;
             } else if (i == n - 1 && leftSum == 0) {
-                pivotIdx = i;
-                break;
+                return i;
             }
             leftSum += nums[i];
         }
-        return pivotIdx;
+        return -1;
     }
 }
